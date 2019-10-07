@@ -2,18 +2,19 @@
 #include <Menu.h>
 #include <DetallesGraficos.h>
 #include <Validaciones.h>
-#include <clsJuego.h>
+#include <clsJuego.h>           //TERMINADO
 using namespace std;
 
 int main()
 {
     DetallesGraficos detalles;
     Validaciones validaciones;
-    clsJuego miPartida(100000);//Terminado
+    clsJuego miPartida(100000);
     Menu miMenu(detalles,validaciones);
-    //TODO Solo falta terminar el menu
-    miMenu.iniciar();
 
+    miMenu.iniciar();
+    miMenu.mostrar(&miPartida);
+    detalles.esperarIngreso(false);
     miMenu.finalizar();
     return 0;
 }

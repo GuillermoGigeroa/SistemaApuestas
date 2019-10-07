@@ -31,10 +31,8 @@ void DetallesGraficos::hacerEspacio(){
 }
 
 void DetallesGraficos::escribirSlow(char *esteTexto){
-    const int num = 15;
     const int ms = 50;
     int x = 0;
-    cout<<setw(num)<<left<<" ";
     while (esteTexto[x] != '\0'){
         cout<<esteTexto[x];
         x++;
@@ -44,25 +42,7 @@ void DetallesGraficos::escribirSlow(char *esteTexto){
 }
 
 void DetallesGraficos::_escribirSlow(char *esteTexto){
-    const int num = 15;
     int x = 0;
-    cout<<setw(num)<<left<<" ";
-    while (esteTexto[x] != '\0'){
-        if (esteTexto[x] != ' '){
-            Sleep(5);
-        }
-        cout<<esteTexto[x];
-        x++;
-    }
-    cout<<endl;
-}
-
-void DetallesGraficos::_escribirSlow(char *esteTexto, bool conTabulacion){
-    const int num = 15;
-    int x = 0;
-    if (conTabulacion){
-        cout<<setw(num)<<left<<" ";
-    }
     while (esteTexto[x] != '\0'){
         if (esteTexto[x] != ' '){
             Sleep(5);
@@ -74,62 +54,62 @@ void DetallesGraficos::_escribirSlow(char *esteTexto, bool conTabulacion){
 }
 
 void DetallesGraficos::presentacion(){
-    escribirSlow("              @@@@@@@@@@@@@@   @@@@@@@@@@@@@@              ");
-    escribirSlow("          @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@          ");
-    escribirSlow("       @@@@@@@@        @@@@@@@@@@@@@        @@@@@@@@       ");
-    escribirSlow("     @@@@@@         @@@@@@@     @@@@@@@         @@@@@@     ");
-    escribirSlow("   @@@@@@            @@@           @@@            @@@@@@   ");
-    escribirSlow("  @@@@@                                             @@@@@  ");
-    escribirSlow(" @@@@@           __________________________          @@@@@ ");
-    escribirSlow("@@@@@           |                          |          @@@@@");
-    escribirSlow("@@@@            | G.I.G.E.R.O.A.B.L.A.C.K. |           @@@@");
-    escribirSlow("@@@@            |__________________________|           @@@@");
-    escribirSlow("@@@@                                                   @@@@");
-    escribirSlow("@@@@             @@@@@@@@@       @@@@@@@@@             @@@@");
-    escribirSlow("@@@@             @@@@@@@@@       @@@@@@@@@             @@@@");
-    escribirSlow("@@@@@             @@@@               @@@@             @@@@@");
-    escribirSlow(" @@@@@            @@@@               @@@@            @@@@@ ");
-    escribirSlow("  @@@@@            @@@@             @@@@            @@@@@  ");
-    escribirSlow("   @@@@@@           @@@@@         @@@@@           @@@@@@   ");
-    escribirSlow("     @@@@@@          @@@@@@     @@@@@@          @@@@@@     ");
-    escribirSlow("       @@@@@@@@        @@@@@@@@@@@@@        @@@@@@@@       ");
-    escribirSlow("          @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@          ");
+    escribirSlow("               @@@@@@@@@@@@@@   @@@@@@@@@@@@@@              ");
+    escribirSlow("           @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@          ");
+    escribirSlow("        @@@@@@@@        @@@@@@@@@@@@@        @@@@@@@@       ");
+    escribirSlow("      @@@@@@         @@@@@@@     @@@@@@@         @@@@@@     ");
+    escribirSlow("    @@@@@@            @@@           @@@            @@@@@@   ");
+    escribirSlow("   @@@@@                                             @@@@@  ");
+    escribirSlow("  @@@@@           __________________________          @@@@@ ");
+    escribirSlow(" @@@@@           |                          |          @@@@@");
+    escribirSlow(" @@@@            | G.I.G.E.R.O.A.B.L.A.C.K. |           @@@@");
+    escribirSlow(" @@@@            |__________________________|           @@@@");
+    escribirSlow(" @@@@                                                   @@@@");
+    escribirSlow(" @@@@             @@@@@@@@@       @@@@@@@@@             @@@@");
+    escribirSlow(" @@@@             @@@@@@@@@       @@@@@@@@@             @@@@");
+    escribirSlow(" @@@@@             @@@@               @@@@             @@@@@");
+    escribirSlow("  @@@@@            @@@@               @@@@            @@@@@ ");
+    escribirSlow("   @@@@@            @@@@             @@@@            @@@@@  ");
+    escribirSlow("    @@@@@@           @@@@@         @@@@@           @@@@@@   ");
+    escribirSlow("      @@@@@@          @@@@@@     @@@@@@          @@@@@@     ");
+    escribirSlow("        @@@@@@@@        @@@@@@@@@@@@@        @@@@@@@@       ");
+    escribirSlow("           @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@          ");
     hacerEspacio();
-    escribirSlow("           SISTEMA DE APUESTAS - by GIGEROABLACK");
+    escribirSlow("            SISTEMA DE APUESTAS - by GIGEROABLACK");
     hacerEspacio();
-    _escribirSlow("         ... Presione enter para continuar ...");
+    _escribirSlow(" Presione enter para continuar ...");
     cin.get();
 }
 
 void DetallesGraficos::despedida(){
     limpiarConsola();
-    escribirSlow("              @@@@@@@@@@@@@@   @@@@@@@@@@@@@@              ");
-    escribirSlow("          @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@          ");
-    escribirSlow("       @@@@@@@@        @@@@@@@@@@@@@        @@@@@@@@       ");
-    escribirSlow("     @@@@@@         @@@@@@@     @@@@@@@         @@@@@@     ");
-    escribirSlow("   @@@@@@            @@@           @@@            @@@@@@   ");
-    escribirSlow("  @@@@@                                             @@@@@  ");
-    escribirSlow(" @@@@@           __________________________          @@@@@ ");
-    escribirSlow("@@@@@           |                          |          @@@@@");
-    escribirSlow("@@@@            | G.I.G.E.R.O.A.B.L.A.C.K. |           @@@@");
-    escribirSlow("@@@@            |__________________________|           @@@@");
-    escribirSlow("@@@@                                                   @@@@");
-    escribirSlow("@@@@             @@@@@@@@@       @@@@@@@@@             @@@@");
-    escribirSlow("@@@@             @@@@@@@@@       @@@@@@@@@             @@@@");
-    escribirSlow("@@@@@             @@@@               @@@@             @@@@@");
-    escribirSlow(" @@@@@            @@@@               @@@@            @@@@@ ");
-    escribirSlow("  @@@@@            @@@@             @@@@            @@@@@  ");
-    escribirSlow("   @@@@@@           @@@@@         @@@@@           @@@@@@   ");
-    escribirSlow("     @@@@@@          @@@@@@     @@@@@@          @@@@@@     ");
-    escribirSlow("       @@@@@@@@        @@@@@@@@@@@@@        @@@@@@@@       ");
-    escribirSlow("          @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@          ");
+    escribirSlow("               @@@@@@@@@@@@@@   @@@@@@@@@@@@@@              ");
+    escribirSlow("           @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@          ");
+    escribirSlow("        @@@@@@@@        @@@@@@@@@@@@@        @@@@@@@@       ");
+    escribirSlow("      @@@@@@         @@@@@@@     @@@@@@@         @@@@@@     ");
+    escribirSlow("    @@@@@@            @@@           @@@            @@@@@@   ");
+    escribirSlow("   @@@@@                                             @@@@@  ");
+    escribirSlow("  @@@@@           __________________________          @@@@@ ");
+    escribirSlow(" @@@@@           |                          |          @@@@@");
+    escribirSlow(" @@@@            | G.I.G.E.R.O.A.B.L.A.C.K. |           @@@@");
+    escribirSlow(" @@@@            |__________________________|           @@@@");
+    escribirSlow(" @@@@                                                   @@@@");
+    escribirSlow(" @@@@             @@@@@@@@@       @@@@@@@@@             @@@@");
+    escribirSlow(" @@@@             @@@@@@@@@       @@@@@@@@@             @@@@");
+    escribirSlow(" @@@@@             @@@@               @@@@             @@@@@");
+    escribirSlow("  @@@@@            @@@@               @@@@            @@@@@ ");
+    escribirSlow("   @@@@@            @@@@             @@@@            @@@@@  ");
+    escribirSlow("    @@@@@@           @@@@@         @@@@@           @@@@@@   ");
+    escribirSlow("      @@@@@@          @@@@@@     @@@@@@          @@@@@@     ");
+    escribirSlow("        @@@@@@@@        @@@@@@@@@@@@@        @@@@@@@@       ");
+    escribirSlow("           @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@          ");
     hacerEspacio();
-    escribirSlow("            MUCHAS GRACIAS POR UTILIZAR EL");
-    escribirSlow("                 SISTEMA DE APUESTAS");
+    escribirSlow("             MUCHAS GRACIAS POR UTILIZAR EL");
+    escribirSlow("                  SISTEMA DE APUESTAS");
     hacerEspacio();
-    hacerEspacio();    escribirSlow("              Hecho por Guillermo Gigeroa");
+    hacerEspacio();    escribirSlow("               Hecho por Guillermo Gigeroa");
     hacerEspacio();
-    _escribirSlow("  Presione enter para finalizar ...",false);
+    _escribirSlow(" Presione enter para finalizar ...");
     cin.get();
 }
 

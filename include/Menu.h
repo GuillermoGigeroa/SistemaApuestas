@@ -11,7 +11,8 @@ private:
 public:
     Menu(DetallesGraficos d, Validaciones v);
     void iniciar();
-    void mostrar();
+    void mostrar(clsJuego *estaPartida);
+    void
     void finalizar();
 };
 

@@ -9,7 +9,6 @@ public:
     void hacerEspacio();
     void escribirSlow(char *esteTexto);
     void _escribirSlow(char *esteTexto);
-    void _escribirSlow(char *esteTexto, bool conTabulacion);
     void presentacion();
     void despedida();
 };
