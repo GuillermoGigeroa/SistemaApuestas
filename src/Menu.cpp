@@ -24,7 +24,7 @@ void Menu::mostrar(clsJuego *estaPartida){
 
 bool Menu::elegirOpcion(clsJuego *estaPartida){
     bool esValido = false;
-    char opcion[30];
+    char opcion[200];
     opcion[0] = ' ';
     opcion[1] = '\0';
     while(!esValido){
@@ -59,7 +59,7 @@ bool Menu::elegirOpcion(clsJuego *estaPartida){
             <<endl;
         cout<<"|________________________________________________|"<<endl;
         cout<<"Ingrese la opcion elegida: ";
-        cin.getline(opcion,30);
+        cin.getline(opcion,200);
         if(esRespuesta(opcion)){
             esValido = true;
         }
@@ -70,7 +70,7 @@ bool Menu::elegirOpcion(clsJuego *estaPartida){
         {
             //TODO Hacer elegir al usuario el monto
             esValido = false;
-            char num[30];
+            char num[200];
             num[0] = ' ';
             num[1] = '\0';
             while(!esValido){
@@ -105,7 +105,7 @@ bool Menu::elegirOpcion(clsJuego *estaPartida){
                     <<endl;
                 cout<<"|________________________________________________|"<<endl;
                 cout<<"Ingrese el monto a apostar: ";
-                cin.getline(num,30);
+                cin.getline(num,200);
                 if(validarSiEsNumero(num)){
                     esValido = true;
                 }
