@@ -31,6 +31,9 @@
 *.out
 *.app
 
-# Archivo de Code::Blocks
+# Archivos de Code::Blocks
 *.depend
 *.layout
+
+# Archivos de programa
+*.sav
