@@ -58,7 +58,7 @@ bool Menu::elegirOpcion(clsJuego *estaPartida){
             <<setw(1)<<left<<"|"
             <<endl;
         cout<<"|________________________________________________|"<<endl;
-        cout<<"Ingrese la opcion elegida: ";
+        d._escribirSlow("Ingrese la opcion elegida: ");
         cin.getline(opcion,200);
         if(esRespuesta(opcion)){
             esValido = true;
@@ -104,7 +104,7 @@ bool Menu::elegirOpcion(clsJuego *estaPartida){
                     <<setw(1)<<left<<"|"
                     <<endl;
                 cout<<"|________________________________________________|"<<endl;
-                cout<<"Ingrese el monto a apostar: ";
+                d._escribirSlow("Ingrese el monto a apostar: $");
                 cin.getline(num,200);
                 if(validarSiEsNumero(num)){
                     esValido = true;

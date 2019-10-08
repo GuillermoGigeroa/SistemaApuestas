@@ -91,7 +91,7 @@ void clsJuego::MostrarEstadisticas(){
         <<setw(1)<<left<<"|"
         <<endl;
     cout<<setw(25)<<left<<"| >> MONTO INICIAL      |"
-        <<setw(8)<<left<<"        "
+        <<setw(8)<<left<<"       $"
         <<setw(16)<<left<<montoInicial
         <<setw(1)<<left<<"|"
         <<endl;
@@ -109,7 +109,7 @@ void clsJuego::MostrarEstadisticas(){
         dinero = montoInicial-montoActual;
     }
     cout<<setw(25)<<left<<"| >> DINERO GANADO      |"
-        <<setw(8)<<left<<"        "
+        <<setw(8)<<left<<"       $"
         <<setw(16)<<left<<dinero
         <<setw(1)<<left<<"|"
         <<endl;
@@ -118,17 +118,17 @@ void clsJuego::MostrarEstadisticas(){
         dinero = -(montoInicial-montoActual);
     }
     cout<<setw(25)<<left<<"| >> DINERO PERDIDO     |"
-        <<setw(8)<<left<<"        "
+        <<setw(8)<<left<<"       $"
         <<setw(16)<<left<<dinero
         <<setw(1)<<left<<"|"
         <<endl;
     cout<<setw(25)<<left<<"| >> MONTO DISPONIBLE   |"
-        <<setw(8)<<left<<"        "
+        <<setw(8)<<left<<"       $"
         <<setw(16)<<left<<montoActual
         <<setw(1)<<left<<"|"
         <<endl;
     cout<<setw(25)<<left<<"| >> APUESTA            |"
-        <<setw(8)<<left<<"        "
+        <<setw(8)<<left<<"       $"
         <<setw(16)<<left<<apuesta
         <<setw(1)<<left<<"|"
         <<endl;
