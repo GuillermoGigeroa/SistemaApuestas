@@ -8,11 +8,12 @@ class Menu{
 private:
     DetallesGraficos d;
     Validaciones v;
+    bool esRespuesta(char *estaRespuesta);
 public:
     Menu(DetallesGraficos d, Validaciones v);
     void iniciar();
     void mostrar(clsJuego *estaPartida);
-    void
+    void elegirOpcion(clsJuego *estaPartida);
     void finalizar();
 };
 

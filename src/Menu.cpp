@@ -51,6 +51,28 @@ void Menu::mostrar(clsJuego *estaPartida){
         <<setw(1)<<left<<"|"
         <<endl;
     cout<<"|________________________________________________|"<<endl;
+    elegirOpcion(estaPartida);
+}
+
+void Menu::elegirOpcion(clsJuego *estaPartida){
+    bool esValido = false;
+    char opcion[30];
+    opcion[0] = ' ';
+    opcion[1] = '\0';
+    while(!esValido){
+        d.limpiarConsola();
+        cout<<"Ingrese la opcion elegida: ";
+
+    }
+}
+
+bool Menu::esRespuesta(char *estaRespuesta){
+    if((estaRespuesta[0] >= 'a' && estaRespuesta[0] <= 'z')||(estaRespuesta[0] >= 'A' && estaRespuesta[0] <= 'Z')){
+            if (estaRespuesta[1] == '\0'){
+                return true;
+            }
+    }
+    return false;
 }
 
 void Menu::finalizar(){

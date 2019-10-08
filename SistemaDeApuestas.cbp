@@ -38,11 +38,9 @@
 		<Unit filename="SistemaDeApuestas.cpp" />
 		<Unit filename="include/DetallesGraficos.h" />
 		<Unit filename="include/Menu.h" />
-		<Unit filename="include/Validaciones.h" />
 		<Unit filename="include/clsJuego.h" />
 		<Unit filename="src/DetallesGraficos.cpp" />
 		<Unit filename="src/Menu.cpp" />
-		<Unit filename="src/Validaciones.cpp" />
 		<Unit filename="src/clsJuego.cpp" />
 		<Extensions>
 			<code_completion />
