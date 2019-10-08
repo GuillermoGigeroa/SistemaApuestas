@@ -7,12 +7,13 @@ class Menu{
 private:
     DetallesGraficos d;
     bool esRespuesta(char *estaRespuesta);
-public:
-    Menu(DetallesGraficos d);
-    void iniciar();
     void mostrar(clsJuego *estaPartida);
-    void elegirOpcion(clsJuego *estaPartida);
+    bool elegirOpcion(clsJuego *estaPartida);
     void finalizar();
+    bool esNumero(char esteCaracter);
+    bool validarSiEsNumero(char *esto);
+public:
+    void iniciar(clsJuego *estaPartida);
 };
 
 #endif // MENU_H

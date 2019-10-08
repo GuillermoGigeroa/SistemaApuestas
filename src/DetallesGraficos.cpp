@@ -20,12 +20,6 @@ void DetallesGraficos::esperarIngreso(bool conMensaje){
         }
 }
 
-void DetallesGraficos::hacerEspacio(int cantidad){
-    for (int x = 0; x < cantidad; ++x){
-        cout<<endl;
-    }
-}
-
 void DetallesGraficos::hacerEspacio(){
     cout<<endl;
 }
@@ -75,9 +69,9 @@ void DetallesGraficos::presentacion(){
     escribirSlow("        @@@@@@@@        @@@@@@@@@@@@@        @@@@@@@@       ");
     escribirSlow("           @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@          ");
     hacerEspacio();
-    escribirSlow("            SISTEMA DE APUESTAS - by GIGEROABLACK");
+    escribirSlow("                        BIENVENIDO AL");
     hacerEspacio();
-    _escribirSlow(" Presione enter para continuar ...");
+    escribirSlow("           SISTEMA DE APUESTAS - by Guillermo Gigeroa");
     cin.get();
 }
 
@@ -104,12 +98,9 @@ void DetallesGraficos::despedida(){
     escribirSlow("        @@@@@@@@        @@@@@@@@@@@@@        @@@@@@@@       ");
     escribirSlow("           @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@          ");
     hacerEspacio();
-    escribirSlow("             MUCHAS GRACIAS POR UTILIZAR EL");
-    escribirSlow("                  SISTEMA DE APUESTAS");
+    escribirSlow("                    GRACIAS POR UTILIZAR EL");
     hacerEspacio();
-    hacerEspacio();    escribirSlow("               Hecho por Guillermo Gigeroa");
-    hacerEspacio();
-    _escribirSlow(" Presione enter para finalizar ...");
+    escribirSlow("           SISTEMA DE APUESTAS - by Guillermo Gigeroa");
     cin.get();
 }
 

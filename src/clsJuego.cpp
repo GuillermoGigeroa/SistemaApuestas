@@ -127,7 +127,7 @@ void clsJuego::MostrarEstadisticas(){
         <<setw(16)<<left<<montoActual
         <<setw(1)<<left<<"|"
         <<endl;
-    cout<<setw(25)<<left<<"| >> MONTO DISPONIBLE   |"
+    cout<<setw(25)<<left<<"| >> APUESTA            |"
         <<setw(8)<<left<<"        "
         <<setw(16)<<left<<apuesta
         <<setw(1)<<left<<"|"
