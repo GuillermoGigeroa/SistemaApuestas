@@ -36,6 +36,9 @@
 		</Compiler>
 		<Unit filename="Ejercicio POO.pdf" />
 		<Unit filename="SistemaDeApuestas.cpp" />
+		<Unit filename="icono.rc">
+			<Option compilerVar="WINDRES" />
+		</Unit>
 		<Unit filename="include/DetallesGraficos.h" />
 		<Unit filename="include/Menu.h" />
 		<Unit filename="include/clsJuego.h" />
