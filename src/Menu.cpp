@@ -1,5 +1,4 @@
 #include "DetallesGraficos.h"
-#include "Validaciones.h"
 #include "Menu.h"
 #include <iostream>
 #include <iomanip>
@@ -8,9 +7,8 @@ using std::setw;
 using std::left;
 using namespace std;
 
-Menu::Menu(DetallesGraficos d, Validaciones v){
+Menu::Menu(DetallesGraficos d){
     this->d = d;
-    this->v = v;
 }
 
 void Menu::iniciar(){
@@ -20,7 +18,6 @@ void Menu::iniciar(){
 }
 
 void Menu::mostrar(clsJuego *estaPartida){
-    //TODO Falta hacer las funciones de las opciones del menu
     d.limpiarConsola();
     estaPartida->MostrarEstadisticas();
     cout<<setw(49)<<left<<"|"
@@ -61,8 +58,54 @@ void Menu::elegirOpcion(clsJuego *estaPartida){
     opcion[1] = '\0';
     while(!esValido){
         d.limpiarConsola();
+        estaPartida->MostrarEstadisticas();
         cout<<"Ingrese la opcion elegida: ";
+        cin.getline(opcion,30);
+        if(esRespuesta(opcion)){
+            esValido = true;
+        }
+    }
+    //TODO Hacer switch, ver
+    switch (opcion[0]){
+    case 'a':
+    case 'A':
+        {
 
+        }break;
+    case 'b':
+    case 'B':
+        {
+
+        }break;
+    case 'c':
+    case 'C':
+        {
+
+        }break;
+    case 'd':
+    case 'D':
+        {
+
+        }break;
+    case 'e':
+    case 'E':
+        {
+
+        }break;
+    case 'f':
+    case 'F':
+        {
+
+        }break;
+    case 's':
+    case 'S':
+        {
+
+        }break;
+    default:
+        {
+            cout<<"Opcion incorrecta..."<<endl;
+        }break;
     }
 }
 
