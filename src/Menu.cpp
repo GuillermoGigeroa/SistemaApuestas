@@ -68,7 +68,6 @@ bool Menu::elegirOpcion(clsJuego *estaPartida){
     case 'a':
     case 'A':
         {
-            //TODO Hacer elegir al usuario el monto
             esValido = false;
             char num[200];
             num[0] = ' ';

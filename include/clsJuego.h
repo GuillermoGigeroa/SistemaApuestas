@@ -8,11 +8,8 @@ private:
     int montoActual;
     int cantPartidasGanadas;
     int cantPartidasPerdidas;
-    void setMontoInicial(int);
-    void setApuesta(int);
-    void setMontoActual(int);
-    void setCantPartidasGanadas(int);
-    void setCantPartidasPerdidas(int);
+    int dineroGanado;
+    int dineroPerdido;
 public:
     clsJuego(int montoInicial);
     void Perder();
@@ -27,6 +24,15 @@ public:
     int getMontoActual(){return montoActual;}
     int getCantPartidasGanadas(){return cantPartidasGanadas;}
     int getCantPartidasPerdidas(){return cantPartidasPerdidas;}
+    int getDineroGanado(){return dineroGanado;}
+    int getDineroPerdido(){return dineroPerdido;}
+    void setMontoInicial(int);
+    void setApuesta(int);
+    void setMontoActual(int);
+    void setCantPartidasGanadas(int);
+    void setCantPartidasPerdidas(int);
+    void setDineroGanado(int);
+    void setDineroPerdido(int);
 };
 
 #endif // CLSJUEGO_H

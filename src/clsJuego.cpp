@@ -2,6 +2,7 @@
 #include <iostream>
 #include <cstdio>
 #include <iomanip>
+#include <windows.h>
 using namespace std;
 using std::setw;
 using std::left;
@@ -12,26 +13,30 @@ clsJuego::clsJuego(int montoInicial){
     setApuesta(0);
     setCantPartidasGanadas(0);
     setCantPartidasPerdidas(0);
+    setDineroGanado(0);
+    setDineroPerdido(0);
 }
 
 void clsJuego::Perder(){
-    montoActual = montoActual - apuesta;
-    cantPartidasPerdidas++;
-    apuesta = 0;
+    setMontoActual(getMontoActual()-getApuesta());
+    setCantPartidasPerdidas(getCantPartidasPerdidas()+1);
+    setDineroPerdido(getDineroPerdido()+getApuesta());
+    setApuesta(0);
 }
 
 void clsJuego::Ganar(){
-    montoActual = montoActual + apuesta;
-    cantPartidasGanadas++;
-    apuesta = 0;
+    setMontoActual(getMontoActual()+getApuesta());
+    setCantPartidasGanadas(getCantPartidasGanadas()+1);
+    setDineroGanado(getDineroGanado()+getApuesta());
+    setApuesta(0);
 }
 
 void clsJuego::Apostar(int apuesta){
-    if (this->apuesta + apuesta <= montoActual){
-        this->apuesta = this->apuesta + apuesta;
+    if (getApuesta() + apuesta <= getMontoActual()){
+        setApuesta(getApuesta()+apuesta);
     }
     else{
-        this->apuesta = montoActual;
+        setApuesta(getMontoActual());
     }
 }
 
@@ -42,13 +47,10 @@ void clsJuego::Guardar(){
         cout<<"Error al guardar partida..."<<endl;
         return;
     }
-    fwrite(&montoInicial,sizeof(int),1,archivo);
-    fwrite(&apuesta,sizeof(int),1,archivo);
-    fwrite(&montoActual,sizeof(int),1,archivo);
-    fwrite(&cantPartidasGanadas,sizeof(int),1,archivo);
-    fwrite(&cantPartidasPerdidas,sizeof(int),1,archivo);
+    fwrite(this,sizeof(clsJuego),1,archivo);
     fclose(archivo);
     cout<<"Partida guardada..."<<endl;
+    Sleep(700);
 }
 
 void clsJuego::Cargar(){
@@ -59,29 +61,21 @@ void clsJuego::Cargar(){
         return;
     }
     int partidaCargada;
-    fread(&partidaCargada,sizeof(int),1,archivo);
-    montoInicial = partidaCargada;
-    fread(&partidaCargada,sizeof(int),1,archivo);
-    apuesta = partidaCargada;
-    fread(&partidaCargada,sizeof(int),1,archivo);
-    montoActual = partidaCargada;
-    fread(&partidaCargada,sizeof(int),1,archivo);
-    cantPartidasGanadas = partidaCargada;
-    fread(&partidaCargada,sizeof(int),1,archivo);
-    cantPartidasPerdidas = partidaCargada;
+    fread(this,sizeof(clsJuego),1,archivo);
     fclose(archivo);
     cout<<"Partida cargada..."<<endl;
-}
+    Sleep(700);}
 
 void clsJuego::Reiniciar(){
-    this->montoActual = montoInicial;
-    this->apuesta = 0;
-    this->cantPartidasGanadas = 0;
-    this->cantPartidasPerdidas = 0;
+    setMontoActual(getMontoInicial());
+    setApuesta(0);
+    setCantPartidasGanadas(0);
+    setCantPartidasPerdidas(0);
+    setDineroGanado(0);
+    setDineroPerdido(0);
 }
 
 void clsJuego::MostrarEstadisticas(){
-    int dinero = 0;
     cout<<" ________________________________________________ "<<endl;
     cout<<"|                                                |"<<endl;
     cout<<"|                  ESTADISTICAS                  |"<<endl;
@@ -92,44 +86,37 @@ void clsJuego::MostrarEstadisticas(){
         <<endl;
     cout<<setw(25)<<left<<"| >> MONTO INICIAL      |"
         <<setw(8)<<left<<"       $"
-        <<setw(16)<<left<<montoInicial
+        <<setw(16)<<left<<getMontoInicial()
         <<setw(1)<<left<<"|"
         <<endl;
     cout<<setw(25)<<left<<"| >> PARTIDAS GANADAS   |"
         <<setw(8)<<left<<"        "
-        <<setw(16)<<left<<cantPartidasGanadas
+        <<setw(16)<<left<<getCantPartidasGanadas()
         <<setw(1)<<left<<"|"
         <<endl;
     cout<<setw(25)<<left<<"| >> PARTIDAS PERDIDAS  |"
         <<setw(8)<<left<<"        "
-        <<setw(16)<<left<<cantPartidasPerdidas
+        <<setw(16)<<left<<getCantPartidasPerdidas()
         <<setw(1)<<left<<"|"
         <<endl;
-    if (montoInicial-montoActual > 0){
-        dinero = montoInicial-montoActual;
-    }
     cout<<setw(25)<<left<<"| >> DINERO GANADO      |"
         <<setw(8)<<left<<"       $"
-        <<setw(16)<<left<<dinero
+        <<setw(16)<<left<<getDineroGanado()
         <<setw(1)<<left<<"|"
         <<endl;
-    dinero = 0;
-    if (montoInicial-montoActual < 0){
-        dinero = -(montoInicial-montoActual);
-    }
     cout<<setw(25)<<left<<"| >> DINERO PERDIDO     |"
         <<setw(8)<<left<<"       $"
-        <<setw(16)<<left<<dinero
+        <<setw(16)<<left<<getDineroPerdido()
         <<setw(1)<<left<<"|"
         <<endl;
     cout<<setw(25)<<left<<"| >> MONTO DISPONIBLE   |"
         <<setw(8)<<left<<"       $"
-        <<setw(16)<<left<<montoActual
+        <<setw(16)<<left<<getMontoActual()
         <<setw(1)<<left<<"|"
         <<endl;
     cout<<setw(25)<<left<<"| >> APUESTA            |"
         <<setw(8)<<left<<"       $"
-        <<setw(16)<<left<<apuesta
+        <<setw(16)<<left<<getApuesta()
         <<setw(1)<<left<<"|"
         <<endl;
     cout<<"|________________________________________________|"<<endl;
@@ -153,4 +140,12 @@ void clsJuego::setCantPartidasGanadas(int numero){
 
 void clsJuego::setCantPartidasPerdidas(int numero){
     cantPartidasPerdidas = numero;
+}
+
+void clsJuego::setDineroGanado(int numero){
+    dineroGanado = numero;
+}
+
+void clsJuego::setDineroPerdido(int numero){
+    dineroPerdido = numero;
 }
